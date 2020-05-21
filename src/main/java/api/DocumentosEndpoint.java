@@ -365,4 +365,24 @@ public class DocumentosEndpoint {
         return Response.ok(respuesta.getResponseJson()).build();
     }
 
+    @GET
+    @Path("/todos")
+    @Produces("application/json")
+    public Response buscarDocumentos() {
+        List<Documento> documentos = daoDocumento.findAll();
+        JSONArray listaDocumentos = new JSONArray();
+        for (Documento documento : documentos) {
+            JSONObject documentoJson = new JSONObject();
+            documentoJson.put("id", documento.getId());
+            documentoJson.put("nombre", documento.getNombre());
+            documentoJson.put("url", documento.getUrl());
+            listaDocumentos.put(documentoJson);
+
+        }
+        ResponseJson respuesta = new ResponseJson();
+        respuesta.setStateResponse(ResponseJson.State.OK);
+        respuesta.addDataResponse("documentos", listaDocumentos);
+        return Response.ok(respuesta.getResponseJson()).build();
+    }
+
 }
