@@ -4,7 +4,7 @@
   <persistence-unit name="tpmotorbusquedaPU" transaction-type="JTA">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     
-    <jta-data-source>dlcResource</jta-data-source>
+    <jta-data-source>jdbc/motorbusqueda</jta-data-source>
     
     <class>entities.Documento</class>
     <class>entities.Posteo</class>

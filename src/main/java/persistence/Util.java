@@ -6,12 +6,19 @@
 package persistence;
 
 import entities.Palabra;
+import entities.Posteo;
 import exceptions.TechnicalException;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
 
 /**
  *
@@ -31,4 +38,5 @@ public class Util {
             throw new TechnicalException(ex);
         }
     }
+   
 }

@@ -4,6 +4,7 @@
 package commons;
 
 import exceptions.TechnicalException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -21,6 +22,10 @@ public interface Dao<E extends DalEntity, K>
     void delete(K pKey);
     
     E create(E pData);
+    
+    ArrayList<E> insertArrayList(ArrayList<E> arrayListData);
+    
+    void updateArrayList(ArrayList<E> arrayListData);
 
     E retrieve(K pKey);
 
